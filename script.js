@@ -30,7 +30,7 @@ const perservice = 20;
 
   let abalableCoin = parseInt(getEliment("point").innerText);
 if(abalableCoin<perservice){
-return alert("you hoa no point")
+return alert("you Have no Enough point")
 }
 
   let CurentPoint = abalableCoin - perservice;
@@ -44,17 +44,22 @@ return alert("you hoa no point")
 
    const EmergenyNuber =callcard.parentNode.parentNode.children[2].children[0].innerText
    const serviceName =callcard.parentNode.parentNode.children[1].children[0].innerText
+   const currentTime = new Date()
+let text =currentTime.toLocaleTimeString();
 
-   alert(`Number ${EmergenyNuber} , ${serviceName}`)
+   alert( `${serviceName}
+"📞"${EmergenyNuber}`
+
+   )
    const cardContainer = getEliment("histoy-continer");
    const newCard = document.createElement("div");
-   newCard.innerHTML =`<div class="flex justify-between items-center my-4 md:my-8 shadow-2xl px-[8px] md:p-[16px]">
+   newCard.innerHTML =`<div class="flex justify-between items-center my-4 md:my-8 shadow-xl md:shadow-2xl px-[4px] md:p-[16px]">
     <div>
 <h3 class="text-10px md:text-[18px] font-light md:font-semibold">${serviceName}</h3>
 <p class="text-[18px] font-normal">${EmergenyNuber}</p>
     </div>
     <div>
-<p class="text-18 font-normal">11:36:58 AM</p>
+<p class="text-18 font-normal">${text}</p>
     </div>
 </div>`
 cardContainer.append(newCard)
@@ -66,5 +71,13 @@ document.getElementById("clear-btn").addEventListener("click",function(){
    cardContainer.innerHTML ="";
 })
 
-
-
+// coppy number
+const compybatton = document.getElementsByClassName("copy-btn")
+console.log("commy test")
+for(const cbutton of compybatton){
+cbutton.addEventListener("click",function(){
+const getNumber = cbutton.parentNode.parentNode.children[2].children[0].innerText
+  navigator.clipboard.writeText(getNumber);
+  alert(`NUMBER COPPY SECESSfULL:${getNumber}`)
+})
+}
