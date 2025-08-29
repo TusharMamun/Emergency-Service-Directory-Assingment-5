@@ -1,25 +1,23 @@
 1.What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
-getElentById = use for get single div or element ,
-getelemtByClass = its use for get single or more element, ist also arry like html collection
-querySElector: qureySeletor userfor get first and sigle Elemetn and it defint like css Clsss,or id like(.name or #id)  name ,its also array like element 
-querySelectorAll :querySelecorAll use for get all element and its arry like html collaction
-
-
+Ans:-getElementById = used to get a single div or element.
+getElementsByClassName = used to get single or multiple elements, it is also array-like (HTMLCollection).
+querySelector = used to get the first and single element, and it is defined like CSS selector (.name or #id).
+querySelectorAll = used to get all elements and it is array-like (NodeList).
 
 2.How do you create and insert a new element into the DOM?
-<div id ="unq"></div>
-const divcontiner = getElementById("unq").innertext
-newElement = document.creatElement("div")
-newElement.InnerHtml =`<h1>helow</h1>`
-NewElement = divcontiner.append(newElemnt)
+Ans:-
+const divContainer = document.getElementById("unq");
+const newElement = document.createElement("div");
+newElement.innerHTML = "New Element";
+divContainer.append(newElement);
+
 
 3.What is Event Bubbling and how does it work?
-event bubbling is workin when event fier and its work child node to upper node
+Ans:-Event bubbling works when an event fires, and it goes from the child node to the parent node (bottom to top).
 
 4.What is Event Delegation in JavaScript? Why is it useful?
-when fier the event then onley single and wher cleck or other even fire .its wortk only hear
-
-
+When an event fires, instead of adding event listeners to every child, we use a single parent listener. It works by using bubbling and is useful for handling multiple or dynamic elements.
 
 5.What is the difference between preventDefault() and stopPropagation() methods?
-preventDefaut().use for browser reffersh its use for from input valu Get , stopPropragation use for hendel bubbling 
+preventDefault() = used to stop the browser’s default behavior (example: form refresh).
+stopPropagation() = used to handle and stop event bubbling.
